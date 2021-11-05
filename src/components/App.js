@@ -45,6 +45,16 @@ const App = () => {
     }
   };
 
+  const toggleSelected = (index) => {
+    const newItems = [...items];
+
+    newItems[index].isSelected
+      ? (newItems[index].isSelected = false)
+      : (newItems[index].isSelected = true);
+
+    setItems(newItems);
+  };
+
   const handleItemQuantity = (index, increase = true) => {
     const newItems = [...items];
 
@@ -83,7 +93,7 @@ const App = () => {
         <div className="item-list">
           {items.map((item, index) => (
             <div key={`${item.itemName}-${index}`} className="item-container">
-              <div className="item-name">
+              <div className="item-name" onClick={() => toggleSelected(index)}>
                 {item.isSelected ? (
                   <>
                     <FontAwesomeIcon icon={faCheckCircle} />
