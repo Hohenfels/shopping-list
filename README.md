@@ -1,1 +1,1 @@
-https://hohenfels.github.io/ShoppingList/
+https://hohenfels.github.io/shopping-list/
